@@ -7,10 +7,12 @@ import { PaisModule } from './pais/pais.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.modulte';
+import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PaisTablaComponent
   ],
   imports: [
     BrowserModule,
