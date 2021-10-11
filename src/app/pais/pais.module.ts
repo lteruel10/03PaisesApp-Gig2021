@@ -10,6 +10,7 @@ import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { PaisTablaComponent } from '../components/pais-tabla/pais-tabla.component';
 import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
 import { PaisInputComponent } from './components/pais-input/pais-input.component';
+import { PorCapitalPaisComponent } from './pages/por-capital-pais/por-capital-pais.component';
 
 
 
@@ -20,7 +21,8 @@ import { PaisInputComponent } from './components/pais-input/pais-input.component
     PorRegionComponent,
     VerPaisComponent,
     TablaPaisesComponent,
-    PaisInputComponent
+    PaisInputComponent,
+    PorCapitalPaisComponent,
   ],
   exports: [
     PorCapitalComponent,

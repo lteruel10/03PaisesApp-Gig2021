@@ -3,19 +3,24 @@ import { Country } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';
 
 @Component({
-  selector: 'app-por-capital',
-  templateUrl: './por-capital.component.html',
+  selector: 'app-por-capital-pais',
+  templateUrl: './por-capital-pais.component.html',
   styles: [
   ]
 })
-export class PorCapitalComponent implements OnInit {
+export class PorCapitalPaisComponent implements OnInit {
 
 
   ngOnInit(): void {
   }
+
   termino:string = '';
   hayError:boolean = false;
   paises:Country[]=[];
+  paisesC:Country[]=[];
+  paisesP:Country[]=[];
+
+
   constructor(private paisService: PaisService) { }
 
   buscar(termino:string){
@@ -25,12 +30,19 @@ export class PorCapitalComponent implements OnInit {
     .subscribe(paises=>{
       this.paises=paises;//tengo que llenar el arreglo con los datos obtenidos
     },(err=>{
-      this.hayError=true;
+    //  this.hayError=true;
       this.paises=[];
-      // console.log('error');       console.info(err);
     }));
+
+     
+      
+  
+      this.paises = Object.assign(this.paisesP,this.paisesC);
+
+
   }//buscar
 
+  
   sugerencias(termino:string){
     this.hayError=false;
       }//sugerencias

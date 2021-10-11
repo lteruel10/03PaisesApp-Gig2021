@@ -29,7 +29,11 @@ export class PorPaisComponent  {
       this.paises=[];
       // console.log('error');       console.info(err);
     }));
+  }//buscar
 
-  }
+  
+  sugerencias(termino:string){
+    this.hayError=false;
+      }//sugerencias
 
 }

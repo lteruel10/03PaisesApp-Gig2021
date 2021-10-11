@@ -8,6 +8,7 @@ import { PorPaisComponent } from './pais/pages/por-pais/por-pais.component';
 import { PorRegionComponent } from './pais/pages/por-region/por-region.component';
 import { VerPaisComponent } from './pais/pages/ver-pais/ver-pais.component';
 import { SharedModule } from './shared/shared.module';
+import { PorCapitalPaisComponent } from './pais/pages/por-capital-pais/por-capital-pais.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     {//el id es el codigo del pais
         path: 'pais/:id',
         component:VerPaisComponent
+    },
+    {
+        path: 'capitalpais',
+        component:PorCapitalPaisComponent
     },
     {//la excepcion
         path: '**',

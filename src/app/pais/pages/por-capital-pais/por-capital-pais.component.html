@@ -1,4 +1,4 @@
-<h2>Por Capital</h2>
+<h2>Por País o Capital</h2>
 <hr>
 
 <div class="row">
@@ -7,7 +7,7 @@
         <app-pais-input
             (onEnter)="buscar($event)"
             (onDebounce)="sugerencias($event)"
-            placeholder="Buscar por Capital...">
+            placeholder="Buscar Pais o Capital...">
         </app-pais-input>
     </div>
 </div>
@@ -19,6 +19,7 @@
 <div *ngIf="paises.length>0" class="row">
     <div class="col">
         <app-tabla-paises [paises]="paises"></app-tabla-paises>
+
     </div>
    
 </div>

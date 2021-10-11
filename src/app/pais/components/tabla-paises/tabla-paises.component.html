@@ -3,6 +3,7 @@
         <tr>
             <th>#</th>
             <th>Bandera</th>
+            <th>Capital</th>
             <th>Nombre</th>
             <th>Poblacion</th>
             <th></th>
@@ -15,10 +16,11 @@
             <td >
                 <img class="small-flag" [src]="item.flags.png">
             </td>
+            <td>{{item.capital}}</td>
             <td>{{item.name.official}}</td>
             <td>{{item.population |number}}</td>
             <td>
-                <a [routerLink]="['/pais',item.flag]" routerLinkActive="router-link-active" >Ver...</a>
+                <a [routerLink]="['/pais',item.cca2]" routerLinkActive="router-link-active" >Ver...</a>
             </td>
         </tr>
     </tbody>
