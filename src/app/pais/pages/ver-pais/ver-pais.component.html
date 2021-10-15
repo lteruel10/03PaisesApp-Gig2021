@@ -1,1 +1,49 @@
-<p>ver-pais works!</p>
+<div *ngIf="!pais;else divPais "     
+    class="alert alert-info">
+    espere por favor...
+</div>
+<ng-template #divPais>
+    <div class="row">
+        <div class="col-12">
+            <h1>Pais: <small>{{pais[0].name.common}}</small></h1> 
+        </div>
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais[0].flags.png" class="img-thumbnail">
+        </div>    
+        <div class="col">
+            <h3>Informacion</h3>
+            <ul class="list-grpup">
+                <li class="list-group-item">
+                    <strong>Poblacion: </strong>{{pais[0].population |number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Codigo Numerico: </strong>{{pais[0].ccn3 |number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Codigo Alpha3: </strong>{{pais[0].cioc}}
+                </li>
+            </ul>
+        </div>          
+        
+    </div>
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary mr-1">{{pais[0].translations.deu.official}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations.fra.official}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations.hun.official}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations.pol.official}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations.por.official}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations.rus.official}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations.swe.official}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations.zho.official}}</span>
+
+        </div>
+    </div>
+
+    <pre clas="mt-5">
+        {{(pais | json )}}
+    </pre>
+
+</ng-template>

@@ -31,11 +31,15 @@ export class PaisService {
     return obj_unidos;
   }
 
+  buscarRegion(region:string)  :Observable<Country[]>{
+    const url=`${this.apiUrl}/region/${region}`;
+    // console.log("***************************",url);
+    return this.http.get<Country[]>(url);
+  }
+
   getPaisAlpha(id:string)  :Observable<Country>{
     const url=`${this.apiUrlAlpha}/${id}`;
-    console.log(url);
     return this.http.get<Country>(url);
-
   }
 
 

@@ -3,18 +3,28 @@
 <h5>Seleccone una region</h5>
 <div class="row">
     <div class="col-">
+        <!-- 4 MANERAS DE HACER CAMIAR EL ESTILO DE UN BOTON APLICABLE A OTROS ELEMENTOS -->
         <!-- [class.btn-primary]="region===regionActiva" -->
         <!-- [ngClass]="{
             'btn-primary':region===regionActiva,
             'btn-outline-primary':region!==regionActiva
         }" -->
+        <!-- [class]="(region===regionActiva)?'btn-primary':'btn-outline-primary'"               -->
+
         <button *ngFor="let region of regiones" 
-                class="btn btn-outline-primary"
-                
-                (click)=" activarRegion(region)"
+                [class]="getClaseCSS(region)"              
+                (click)="activarRegion(region);"
                 >
-            {{ region}}
+            {{ region |titlecase}}
         </button>
     </div>
-
 </div>
+<hr>
+
+<div *ngIf="paises.length>0" class="row">
+    <div class="col">
+        <app-tabla-paises [paises]="paises"></app-tabla-paises>
+    </div>
+   
+</div>
+
